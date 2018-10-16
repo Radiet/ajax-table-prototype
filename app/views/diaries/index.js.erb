@@ -1,0 +1,6 @@
+var target = "<%= params[:target] %>"
+var table = $('diary-table[data-source="'+target+'"]');
+var bodyTable = table.find('tbody')
+
+template = "<%= j(render('diary', diaries: @diaries)) %>"
+bodyTable.html(template)

@@ -1,0 +1,19 @@
+<% if diaries.any? %>
+  <% diaries.each do |diary| %>
+    <tr>
+      <td><%= diary.written_on.strftime('%D %T') %></td>
+      <td><%= diary.content %></td>
+      <td><%= link_to 'Show', diary %></td>
+      <td><%= link_to 'Edit', edit_diary_path(diary) %></td>
+      <td><%= link_to 'Destroy', diary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+<% else %>
+  <tr>
+    <td ></td>
+    <td colspan="1" style="text-align: center">Loading...</td>
+    <td ></td>
+    <td ></td>
+    <td ></td>
+  </tr>
+<% end %>

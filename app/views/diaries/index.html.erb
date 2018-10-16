@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Diaries</h1>
+ <!-- order = descending -->
+<diary-table data-source="<%=diaries_path%>">
+  <table class="" style="width: 1000px">
+    <thead>
+      <tr>
+        <th width="200px">Written on</th>
+        <th width="550px">Content</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= render 'diary', diaries: @diaries%>
+    </tbody>
+  </table>
+</diary-table>
+
+ <!-- order = 2 yang terbaru -->
+
+<diary-table data-source="<%=diaries_path(limit: 2)%>">
+  <table class="" style="width: 1000px">
+    <thead>
+      <tr>
+        <th width="200px">Written on</th>
+        <th width="550px">Content</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= render 'diary', diaries: @diaries%>
+    </tbody>
+  </table>
+</diary-table>
+
+
+<br>
+
+<%= link_to 'New Diary', new_diary_path %>
